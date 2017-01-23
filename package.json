@@ -1,0 +1,47 @@
+{
+  "name": "all-contributors-webhook",
+  "version": "0.0.0-development",
+  "description": "Webhook to automatically update all-contributors data",
+  "main": "index.js",
+  "author": "Spyros Ioakeikimidis <spyrosikmd@gmail.com> (http://spyros.io/)",
+  "bugs": {
+    "url": "https://github.com/spirosikmd/all-contributors-webhook/issues"
+  },
+  "homepage": "https://github.com/spirosikmd/all-contributors-webhook#readme",
+  "scripts": {
+    "test": "jasmine JASMINE_CONFIG_PATH=jasmine.json",
+    "test:watch": "watch 'npm test' ./lib ./test",
+    "lint": "eslint .",
+    "lint:fix": "npm run lint -- --fix",
+    "validate": "npm test && npm run lint",
+    "start": "node .",
+    "add-contributor": "all-contributors add",
+    "generate-contributors": "all-contributors generate",
+    "commit": "git-cz"
+  },
+  "devDependencies": {
+    "@usabilla/js-styleguide": "^1.0.0",
+    "all-contributors-cli": "^3.0.7",
+    "commitizen": "^2.9.5",
+    "cz-conventional-changelog": "^1.2.0",
+    "eslint": "^3.12.1",
+    "jasmine": "^2.5.2",
+    "jasmine-spec-reporter": "^3.1.0",
+    "validate-commit-msg": "^2.10.1",
+    "watch": "^1.0.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "express": "^4.14.0",
+    "github": "^8.1.1",
+    "lodash": "^4.12.0",
+    "request": "^2.79.0",
+    "request-promise-native": "^1.0.3"
+  },
+  "license": "MIT",
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  }
+}
