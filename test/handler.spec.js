@@ -98,4 +98,22 @@ describe('handlers', function() {
       expect(contribution).toBe(null);
     });
   });
+
+  describe('isPullRequestEvent', function() {
+    it('returns false if the github event header is not pull request', function() {
+      expect(Handler.isPullRequestEvent({
+        'x-github-event': 'commit'
+      })).toBe(false);
+    });
+
+    it('returns false if github event header is not present', function() {
+      expect(Handler.isPullRequestEvent({})).toBe(false);
+    });
+
+    it('returns true if github event header is pull_request', function() {
+      expect(Handler.isPullRequestEvent({
+        'x-github-event': 'pull_request'
+      })).toBe(true);
+    });
+  });
 });
