@@ -1,3 +1,6 @@
 const server = require('./lib/server');
+const winston = require('winston');
 
-server.listen(4567);
+server.listen(server.get('port'), () => {
+  winston.log('info', `all-contributors-webhook is running on port ${server.get('port')}`);
+});

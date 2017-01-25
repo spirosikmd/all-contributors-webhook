@@ -1,6 +1,9 @@
 all-contributors-webhook
 ===
 
+After a pull request is merged, this webhook collects the type of contributions for the pull request author
+and creates a pull request with missing author and contribution data for `.all-contributorsrc` and `README.md`.
+
 ## Contribute
 
 ### Setup
