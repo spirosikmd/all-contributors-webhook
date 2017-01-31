@@ -4,16 +4,16 @@ describe('handlers', function() {
   beforeEach(function() {
     this.commits = [{
       commit: {
-        message: 'test(readme): test'
-      }
+        message: 'test(readme): test',
+      },
     }, {
       commit: {
-        message: 'feat(readme): test'
-      }
+        message: 'feat(readme): test',
+      },
     }, {
       commit: {
-        message: 'docs: test'
-      }
+        message: 'docs: test',
+      },
     }];
   });
 
@@ -25,11 +25,11 @@ describe('handlers', function() {
         pull_request: {
           state: 'closed',
           user: {
-            login: 'foo'
+            login: 'foo',
           },
           merged: true,
-          commits_url: 'url'
-        }
+          commits_url: 'url',
+        },
       };
       spyOn(Handler, 'getCommits').and.returnValue(Promise.resolve(this.commits));
       spyOn(Handler, 'getContributions').and.returnValue(['code']);
@@ -37,10 +37,10 @@ describe('handlers', function() {
 
     it('returns the data to pass to contributors if action is closed and merged true', function(done) {
       Handler.handlePullRequest(this.event)
-        .then(data => {
+        .then((data) => {
           expect(data).toEqual({
             login: 'foo',
-            contributions: ['code']
+            contributions: ['code'],
           });
           expect(Handler.getCommits).toHaveBeenCalledWith('url');
           done();
@@ -76,10 +76,10 @@ describe('handlers', function() {
     it('parses and returns only valid commits', function() {
       const commits = [{
         commit: {
-          message: 'test(readme): test'
-        }
+          message: 'test(readme): test',
+        },
       }, {
-        commit: {}
+        commit: {},
       }];
       const contributions = Handler.getContributions(commits);
       expect(contributions).toEqual(['test']);
@@ -102,7 +102,7 @@ describe('handlers', function() {
   describe('isPullRequestEvent', function() {
     it('returns false if the github event header is not pull request', function() {
       expect(Handler.isPullRequestEvent({
-        'x-github-event': 'commit'
+        'x-github-event': 'commit',
       })).toBe(false);
     });
 
@@ -112,7 +112,7 @@ describe('handlers', function() {
 
     it('returns true if github event header is pull_request', function() {
       expect(Handler.isPullRequestEvent({
-        'x-github-event': 'pull_request'
+        'x-github-event': 'pull_request',
       })).toBe(true);
     });
   });

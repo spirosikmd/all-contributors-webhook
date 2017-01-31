@@ -5,10 +5,10 @@ if (!global.wallaby) {
   jasmine.getEnv().clearReporters();
   jasmine.getEnv().addReporter(new SpecReporter({
     spec: {
-      displayPending: true
+      displayPending: true,
     },
     summary: {
-      displayPending: false
-    }
+      displayPending: false,
+    },
   }));
 }
