@@ -7,7 +7,7 @@ module.exports = function() {
       require('./test/_helpers/setup')
     },
     env: {
-      type: 'node'
-    }
+      type: 'node',
+    },
   };
 };
