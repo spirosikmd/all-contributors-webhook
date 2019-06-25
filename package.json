@@ -24,7 +24,7 @@
     "all-contributors-cli": "^3.0.7",
     "commitizen": "^2.9.5",
     "cz-conventional-changelog": "^1.2.0",
-    "eslint": "^3.14.1",
+    "eslint": "^4.18.2",
     "jasmine": "^2.5.2",
     "jasmine-spec-reporter": "^3.1.0",
     "validate-commit-msg": "^2.11.1",
