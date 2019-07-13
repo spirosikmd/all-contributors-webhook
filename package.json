@@ -35,7 +35,7 @@
     "child-process-promise": "^2.2.0",
     "express": "^4.14.0",
     "github": "^8.1.1",
-    "lodash": "^4.12.0",
+    "lodash": "^4.17.13",
     "now-logs": "^0.0.7",
     "request": "^2.79.0",
     "request-promise-native": "^1.0.3",
